@@ -1,0 +1,35 @@
+<idea-plugin url="https://github.com/cedricziel/idea-xliff">
+    <id>com.cedricziel.idea.xliff</id>
+    <name>XLIFF Support</name>
+    <version>0.0.1</version>
+    <vendor email="cedric@cedric-ziel.com" url="https://www.cedric-ziel.com">Cedric Ziel</vendor>
+
+    <description><![CDATA[
+<h1>XLIFF Plugin</h1>
+
+<a href="https://github.com/cedricziel/idea-xliff">GitHub Repository</a>
+<br/>
+
+<strong>beta quality</strong>
+    ]]></description>
+
+    <change-notes><![CDATA[
+<h2>0.0.1</h2>
+<ul>
+  <li>Add support for the xlf file type</li>
+</ul>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="171.3780"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.xml</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <fileTypeFactory implementation="com.cedricziel.idea.xliff.XLIFFFileTypeFactory"/>
+
+    </extensions>
+</idea-plugin>

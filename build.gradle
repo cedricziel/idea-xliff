@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        mavenCentral()
+
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.2.17"
+    id "de.undercouch.download" version "3.2.0"
+    id 'com.palantir.git-version' version "0.9.1"
+}
+
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+
+intellij {
+    version 'IU-2017.2.5'
+    pluginName 'XLIFF Support'
+
+    publishPlugin {
+        username System.getenv('IJ_REPO_USERNAME')
+        password System.getenv('IJ_REPO_PASSWORD')
+    }
+
+    patchPluginXml {
+        sinceBuild '172'
+        untilBuild '173.*'
+    }
+}
+
+group 'com.cedricziel.idea.xliff'
+version gitVersion()
+
+apply plugin: 'de.undercouch.download'
+task downloadPsiViewerPlugin() {
+    download {
+        src 'https://download.plugins.jetbrains.com/227/31087/PsiViewer.jar'
+        dest new File("${buildDir}/tmp/plugins/", 'PsiViewer.jar')
+        onlyIfNewer true
+    }
+}
+
+task copyPsiViewerPluginToSandBox(type: Copy) {
+    from "${buildDir}/tmp/plugins/PsiViewer.jar"
+    into "${buildDir}/idea-sandbox/plugins/"
+}
+
+copyPsiViewerPluginToSandBox.dependsOn downloadPsiViewerPlugin
+copyPsiViewerPluginToSandBox.mustRunAfter prepareSandbox
+runIde.dependsOn copyPsiViewerPluginToSandBox
