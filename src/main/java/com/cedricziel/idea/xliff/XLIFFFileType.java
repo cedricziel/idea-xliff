@@ -16,7 +16,7 @@ public class XLIFFFileType extends XmlLikeFileType implements DomSupportEnabled 
     public static final String DEFAULT_EXTENSION = "xlf";
 
     @NonNls
-    public static final String DOT_DEFAULT_EXTENSION = "."+DEFAULT_EXTENSION;
+    public static final String DOT_DEFAULT_EXTENSION = "." + DEFAULT_EXTENSION;
 
     private XLIFFFileType() {
         super(XLIFFLanguage.INSTANCE);
