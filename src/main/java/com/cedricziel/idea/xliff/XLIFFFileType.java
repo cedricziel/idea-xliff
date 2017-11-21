@@ -41,7 +41,7 @@ public class XLIFFFileType extends XmlLikeFileType implements DomSupportEnabled 
     @NotNull
     @Override
     public String getDescription() {
-        return null;
+        return "XML Localisation Interchange File Format";
     }
 
     /**
