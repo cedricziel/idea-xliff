@@ -17,7 +17,7 @@ apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'java'
 
 intellij {
-    version 'IU-2017.2.5'
+    version ideaVersion
     pluginName 'XLIFF Support'
 
     publishPlugin {
@@ -26,7 +26,7 @@ intellij {
     }
 
     patchPluginXml {
-        sinceBuild '172'
+        sinceBuild '173.3'
         untilBuild '173.*'
     }
 }

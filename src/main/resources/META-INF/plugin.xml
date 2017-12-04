@@ -37,6 +37,5 @@
         <fileTypeFactory implementation="com.cedricziel.idea.xliff.XLIFFFileTypeFactory"/>
 
         <xml.tagNameProvider implementation="com.cedricziel.idea.xliff.XLIFFTagProvider"/>
-        <lang.fileViewProviderFactory language="XLIFF 1.2" implementationClass="com.cedricziel.idea.xliff.XLIFFFileViewProviderFactory"/>
     </extensions>
 </idea-plugin>

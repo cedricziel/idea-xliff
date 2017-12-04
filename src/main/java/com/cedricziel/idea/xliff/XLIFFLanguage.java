@@ -7,6 +7,6 @@ public class XLIFFLanguage extends XMLLanguage {
     public static final XLIFFLanguage INSTANCE = new XLIFFLanguage();
 
     protected XLIFFLanguage() {
-        super(XMLLanguage.INSTANCE, "XLIFF 1.2", "application/xliff+xml", "application/x-xliff+xml");
+        super(XMLLanguage.INSTANCE, "XLIFF", "application/xliff+xml", "application/x-xliff+xml");
     }
 }
